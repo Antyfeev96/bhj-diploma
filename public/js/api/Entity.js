@@ -3,6 +3,10 @@
  * Имеет свойство URL, равно пустой строке.
  * */
 class Entity {
+ constructor(url) {
+   this.url = url;
+   this.url = ''
+ }
 
   /**
    * Запрашивает с сервера список данных.
@@ -10,7 +14,10 @@ class Entity {
    * (в зависимости от того, что наследуется от Entity)
    * */
   static list( data, callback = f => f ) {
-
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', this.url)
+    xhr.send()
+    createRequest();
   }
 
   /**
@@ -19,7 +26,10 @@ class Entity {
    * что наследуется от Entity)
    * */
   static create( data, callback = f => f ) {
-
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', this.url)
+    xhr.send()
+    createRequest();
   }
 
   /**
@@ -27,7 +37,10 @@ class Entity {
    * (в зависимости от того, что наследуется от Entity)
    * */
   static get( id = '', data, callback = f => f ) {
-
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', this.url)
+    xhr.send()
+    createRequest();
   }
 
   /**
@@ -35,7 +48,11 @@ class Entity {
    * (в зависимости от того, что наследуется от Entity)
    * */
   static remove( id = '', data, callback = f => f ) {
-
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', this.url)
+    xhr.send()
+    createRequest();
   }
+
 }
 
