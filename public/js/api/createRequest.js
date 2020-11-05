@@ -2,34 +2,40 @@
  * Основная функция для совершения запросов
  * на сервер.
  * */
-const createRequest = (options =
-                           {url, headers, data, responseType, method, callback}) => {
-    if (method === 'GET') {
-        const xhr = new XMLHttpRequest();
-        url = `${url} + ?mail=${data.mail} + &password= + ${data.password}`;
+const createRequest = (options = {}) => {
+    const xhr = new XMLHttpRequest();
+    xhr.open( options.method, options.url );
+    xhr.withCredentials = true;
+
+    if (options.method === 'GET') {
+        options.url = `${options.url} + ?mail=${request.body.email} + &password= + ${request.body.password}`;
         try {
-            xhr.open( method, url );
-            xhr.withCredentials = true;
+            xhr.addEventListener('readystatechange', () => {
+                if (xhr.status === 200 && xhr.readyState === 4) {
+                    callback(error,response)
+                }
+            })
             xhr.send();
-            callback(response)
         }
         catch ( e ) {
             // перехват сетевой ошибки
-            callback( e );
+            callback(e,response);
         }
     } else {
-        const xhr = new XMLHttpRequest(), formData = new FormData;
-        formData.append( 'mail', `${data.mail}` );
-        formData.append( 'password', `${data.password}` );
+        formData = new FormData;
+        formData.append( 'mail', `${request.body.mail}` );
+        formData.append( 'password', `${request.body.password}` );
         try {
-            xhr.open( 'POST', url );
-            xhr.withCredentials = true;
+            xhr.addEventListener('readystatechange', () => {
+                if (xhr.status === 200 && xhr.readyState === 4) {
+                    callback(error,response)
+                }
+            })
             xhr.send(formData);
-            callback(response)
         }
         catch ( e ) {
             // перехват сетевой ошибки
-            callback( e );
+            callback(e,response);
         }
     }
 
