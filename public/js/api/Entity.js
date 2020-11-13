@@ -4,6 +4,8 @@
  * */
 class Entity {
 
+    static url = '';
+
   /**
    * Запрашивает с сервера список данных.
    * Это могут быть счета или доходы/расходы
@@ -11,14 +13,11 @@ class Entity {
    * */
   static list( data, callback = f => f) {
     return createRequest({
-        url: '',
+        url: this.url,
         method: 'GET',
         responseType: 'json',
         data,
-        callback: (err, response) => {
-            console.log(err);
-            console.log(response)
-        }
+        callback: f => f
     });
   }
 
@@ -30,14 +29,11 @@ class Entity {
   static create( data, callback = f => f) {
       let modifiedData = Object.assign({ _method: 'PUT' }, data );
       return createRequest({
-          url: '',
+          url: this.url,
           method: 'POST',
           responseType: 'json',
-          modifiedData,
-          callback: (err, response) => {
-              console.log(err);
-              console.log(response)
-          }
+          data: modifiedData,
+          callback: f => f
       });
   }
 
@@ -47,14 +43,11 @@ class Entity {
    * */
   static get( id = '', data, callback = f => f) {
       return createRequest({
-          url: '',
+          url: this.url,
           method: 'GET',
           responseType: 'json',
           data,
-          callback: (err, response) => {
-              console.log(err);
-              console.log(response)
-          }
+          callback: f => f
       });
   }
 
@@ -65,14 +58,11 @@ class Entity {
   static remove( id = '', data, callback = f => f) {
       let modifiedData = Object.assign({ _method: 'DELETE' }, data );
       return createRequest({
-          url: '',
+          url: this.url,
           method: 'POST',
           responseType: 'json',
-          modifiedData,
-          callback: (err, response) => {
-              console.log(err);
-              console.log(response)
-          }
+          data: modifiedData,
+          callback: f => f
       });
 }
 

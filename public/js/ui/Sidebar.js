@@ -18,13 +18,15 @@ class Sidebar {
    * при нажатии на кнопку .sidebar-toggle
    * */
   static initToggleButton() {
-
+    document.querySelector('.sidebar-toggle').addEventListener('click', () => {
+      document.body.classList.toggle('sidebar-open sidebar-collapse');
+    })
   }
 
   /**
    * При нажатии на кнопку входа, показывает окно входа
    * (через найденное в App.getModal)
-   * При нажатии на кнопку регастрации показывает окно регистрации
+   * При нажатии на кнопку регистрации показывает окно регистрации
    * При нажатии на кнопку выхода вызывает User.logout и по успешному
    * выходу устанавливает App.setState( 'init' )
    * */

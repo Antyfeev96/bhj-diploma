@@ -12,9 +12,7 @@ class Modal {
    * Если переданный элемент не существует,
    * необходимо выкинуть ошибку.
    * */
-  constructor( element ) {
-
-  }
+  static element = new Modal(this.element)
 
   /**
    * При нажатии на элемент с data-dismiss="modal"
@@ -22,7 +20,11 @@ class Modal {
    * (с помощью метода Modal.onClose)
    * */
   registerEvents() {
-
+    element.querySelectorAll('[data-dismiss]').forEach(item => {
+      item.addEventListener('click', () => {
+        this.onClose(e);
+      })
+    })
   }
 
   /**
@@ -30,25 +32,28 @@ class Modal {
    * Закрывает текущее окно (Modal.close())
    * */
   onClose( e ) {
-
+    e.preventDefault()
+    element.querySelectorAll('[data-dismiss]').forEach(item => this.close())
   }
   /**
    * Удаляет обработчики событий
    * */
   unregisterEvents() {
-
+    element.querySelectorAll('[data-dismiss]').forEach(item => {
+      item.removeEventListener('click');
+    })
   }
   /**
    * Открывает окно: устанавливает CSS-свойство display
    * со значением «block»
    * */
   open() {
-
+    this.element.style.display = 'block';
   }
   /**
    * Закрывает окно: удаляет CSS-свойство display
    * */
   close(){
-
+    this.element.style.removeProperty('display')
   }
 }

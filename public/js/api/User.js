@@ -10,7 +10,8 @@ class User {
    * локальном хранилище.
    * */
   static setCurrent(user) {
-    localStorage.user = user;
+    newUser = `{'id':'${user.id}','name':'${user.name}'}`
+    localStorage.user = newUser;
   }
 
   /**
@@ -26,7 +27,14 @@ class User {
    * из локального хранилища
    * */
   static current() {
-    localStorage.user ? localStorage.user : undefined
+    // localStorage.user ? localStorage.user : undefined вот так было в прошлом коммите,
+    // можно ли использовать вместо undefined null?
+    // localStorage.user ? localStorage.user : null
+    if (localStorage.user) {
+      return localStorage.user
+    } else {
+      return undefined
+    }
   }
 
   /**
@@ -45,6 +53,7 @@ class User {
         } else {
           this.unsetCurrent()
         }
+      callback(err, response)
       }
     })
   }
@@ -65,6 +74,7 @@ class User {
         if (response.success) {
           this.setCurrent(response.user)
         }
+        callback(err,response)
       }
     })
   }
@@ -85,6 +95,7 @@ class User {
         if (response.success) {
           this.setCurrent(response.user)
         }
+        callback(err,response)
       }
     })
   }
@@ -103,6 +114,7 @@ class User {
         if (response.success) {
           this.unsetCurrent()
         }
+        callback(err,response)
       }
     })
   }
