@@ -10,7 +10,7 @@ class User {
    * локальном хранилище.
    * */
   static setCurrent(user) {
-    newUser = `{'id':'${user.id}','name':'${user.name}'}`
+    newUser = JSON.stringify(`{'id':'${user.id}','name':'${user.name}'}`);
     localStorage.user = newUser;
   }
 
@@ -27,14 +27,7 @@ class User {
    * из локального хранилища
    * */
   static current() {
-    // localStorage.user ? localStorage.user : undefined вот так было в прошлом коммите,
-    // можно ли использовать вместо undefined null?
-    // localStorage.user ? localStorage.user : null
-    if (localStorage.user) {
-      return localStorage.user
-    } else {
-      return undefined
-    }
+    JSON.parse(localStorage.getItem('user'))
   }
 
   /**

@@ -17,7 +17,7 @@ class Entity {
         method: 'GET',
         responseType: 'json',
         data,
-        callback: f => f
+        callback: callback() 
     });
   }
 
@@ -33,7 +33,7 @@ class Entity {
           method: 'POST',
           responseType: 'json',
           data: modifiedData,
-          callback: f => f
+          callback: callback()
       });
   }
 
@@ -43,11 +43,11 @@ class Entity {
    * */
   static get( id = '', data, callback = f => f) {
       return createRequest({
-          url: this.url,
+          url: this.url + '/' + id,
           method: 'GET',
           responseType: 'json',
           data,
-          callback: f => f
+          callback: callback()
       });
   }
 
@@ -58,11 +58,11 @@ class Entity {
   static remove( id = '', data, callback = f => f) {
       let modifiedData = Object.assign({ _method: 'DELETE' }, data );
       return createRequest({
-          url: this.url,
+          url: this.url + '/' + id,
           method: 'POST',
           responseType: 'json',
           data: modifiedData,
-          callback: f => f
+          callback: callback()
       });
 }
 

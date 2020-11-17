@@ -9,7 +9,7 @@ function createRequest(options) {
     xhr.withCredentials = true;
     xhr.addEventListener('readystatechange', () => {
         if (xhr.status === 200 && xhr.readyState === 4) {
-            options.callback(xhr.response.error, xhr.response)
+            options.callback(xhr.response.success, xhr.response)
         }
     })
     
