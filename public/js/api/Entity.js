@@ -17,7 +17,7 @@ class Entity {
         method: 'GET',
         responseType: 'json',
         data,
-        callback: callback() 
+        callback: callback
     });
   }
 
@@ -33,7 +33,7 @@ class Entity {
           method: 'POST',
           responseType: 'json',
           data: modifiedData,
-          callback: callback()
+          callback: callback
       });
   }
 
@@ -47,7 +47,7 @@ class Entity {
           method: 'GET',
           responseType: 'json',
           data,
-          callback: callback()
+          callback: callback
       });
   }
 
@@ -62,7 +62,7 @@ class Entity {
           method: 'POST',
           responseType: 'json',
           data: modifiedData,
-          callback: callback()
+          callback: callback
       });
 }
 

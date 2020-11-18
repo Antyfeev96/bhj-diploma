@@ -2,37 +2,44 @@
  * Основная функция для совершения запросов
  * на сервер.
  * */
-function createRequest(options) {
+const createRequest = options => {
 
     const xhr = new XMLHttpRequest();
-    xhr.open( options.method, options.url );
+    let formData = new FormData;
     xhr.withCredentials = true;
-    xhr.addEventListener('readystatechange', () => {
-        if (xhr.status === 200 && xhr.readyState === 4) {
-            options.callback(xhr.response.success, xhr.response)
-        }
-    })
     
         try {
 
             if (options.method === 'GET') {
 
-                options.url = `${options.url} + ?mail=${options.data.email} + &password= + ${options.data.password}`;
-                xhr.send();
+                options.url += '?';
+                for (key in options.data) {
+                    options.url += `${key}=${options.data[key]}&`
+                }
+
+                // options.url = `${options.url} + ?mail=${options.data.email} + &password= + ${options.data.password}`; старый вариант
+                // xhr.send();
 
             } else {
 
-                formData = new FormData;
-                formData.append( 'mail', `${options.data.mail}` );
-                formData.append( 'password', `${options.data.password}` );
-                xhr.send(formData);
-        
+                for (key in options.data) {
+                    formData.append(key, options.data[key])
+                }
+    
             }
+            xhr.open( options.method, options.url );
+            xhr.send(formData);
         }
         catch ( e ) {
             // перехват сетевой ошибки
             options.callback(e, xhr.response);
         }
+
+        xhr.addEventListener('readystatechange', () => {
+            if (xhr.status === 200 && xhr.readyState === 4) {
+                options.callback(xhr.response.success, xhr.response)
+            }
+        })
 
         // Оставил в таком виде, т.к. будет странно, если я оставлю в try/catch только xhr.send(),
         // Во-первых, отправки разные и мне не избежать повтора if/else. Сначала if/else будет вне блока
