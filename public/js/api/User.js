@@ -10,8 +10,7 @@ class User {
    * локальном хранилище.
    * */
   static setCurrent(user) {
-    newUser = JSON.stringify(`{'id':'${user.id}','name':'${user.name}'}`);
-    localStorage.user = newUser;
+    localStorage.user = JSON.stringify(user);
   }
 
   /**
@@ -27,7 +26,7 @@ class User {
    * из локального хранилища
    * */
   static current() {
-    JSON.parse(localStorage.getItem('user'))
+    return JSON.parse(localStorage.getItem('user'))
   }
 
   /**

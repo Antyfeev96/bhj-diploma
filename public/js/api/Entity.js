@@ -56,13 +56,12 @@ class Entity {
    * (в зависимости от того, что наследуется от Entity)
    * */
   static remove( id = '', data, callback = f => f) {
-      let modifiedData = Object.assign({ _method: 'DELETE' }, data );
       return createRequest({
           url: this.url + '/' + id,
           method: 'POST',
           responseType: 'json',
-          data: modifiedData,
-          callback: callback
+          data: Object.assign({ _method: 'DELETE' }, data ),
+          callback
       });
 }
 

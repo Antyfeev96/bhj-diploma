@@ -1,3 +1,5 @@
+const { response } = require("express");
+
 /**
  * Класс Sidebar отвечает за работу боковой колонки:
  * кнопки скрытия/показа колонки в мобильной версии сайта
@@ -19,7 +21,8 @@ class Sidebar {
    * */
   static initToggleButton() {
     document.querySelector('.sidebar-toggle').addEventListener('click', () => {
-      document.body.classList.toggle('sidebar-open sidebar-collapse');
+      document.body.classList.toggle('sidebar-open');
+      document.body.classList.toggle('sidebar-collapse')
     })
   }
 
@@ -32,6 +35,20 @@ class Sidebar {
    * */
   static initAuthLinks() {
 
-  }
+    document.querySelector('.menu-item_register').addEventListener('click', () => {
+      Modal.open(App.getModal)
+    })
 
+    document.querySelector('.menu-item_login').addEventListener('click', () => {
+      Modal.open(App.getModal)
+    })
+
+    document.querySelector('.menu-item_logout').addEventListener('click', () => {
+     User.logout();
+     if (response.success) {
+      App.setState('init')
+     }
+    })
+  }
+  
 }

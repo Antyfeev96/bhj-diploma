@@ -12,7 +12,9 @@ class Modal {
    * Если переданный элемент не существует,
    * необходимо выкинуть ошибку.
    * */
-  static element = new Modal(this.element)
+  constructor(elem) {
+    elem === '' ? new Error('Ошибка') : elem = this.element , this.registerEvents(); 
+  }
 
   /**
    * При нажатии на элемент с data-dismiss="modal"
@@ -20,10 +22,14 @@ class Modal {
    * (с помощью метода Modal.onClose)
    * */
   registerEvents() {
-    element.querySelectorAll('[data-dismiss]').forEach(item => {
+    this.element.querySelectorAll('[data-dismiss]').forEach(item => {
       item.addEventListener('click', () => {
         this.onClose(e);
       })
+    })
+
+    document.querySelector('.modal fade in').addEventListener('click', (e) => {
+      e.target.onclick = this.onClose(e)
     })
   }
 
@@ -33,13 +39,13 @@ class Modal {
    * */
   onClose( e ) {
     e.preventDefault()
-    element.querySelectorAll('[data-dismiss]').forEach(item => this.close())
+    this.element.querySelectorAll('[data-dismiss]').forEach(item => this.close())
   }
   /**
    * Удаляет обработчики событий
    * */
   unregisterEvents() {
-    element.querySelectorAll('[data-dismiss]').forEach(item => {
+    this.element.querySelectorAll('[data-dismiss]').forEach(item => {
       item.removeEventListener('click');
     })
   }
