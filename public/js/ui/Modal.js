@@ -13,7 +13,7 @@ class Modal {
    * необходимо выкинуть ошибку.
    * */
   constructor(elem) {
-    elem === '' ? new Error('Ошибка') : elem = this.element , this.registerEvents(); 
+    elem === '' ? new Error('Ошибка') : this.element = elem, this.registerEvents(); 
   }
 
   /**
@@ -22,13 +22,13 @@ class Modal {
    * (с помощью метода Modal.onClose)
    * */
   registerEvents() {
-    this.element.querySelectorAll('[data-dismiss]').forEach(item => {
-      item.addEventListener('click', () => {
-        this.onClose(e);
-      })
-    })
+    // this.element.getElementsByTagName('data-dismiss').forEach(item => {
+    //   item.addEventListener('click', () => {
+    //     this.onClose(e);
+    //   })
+    // })
 
-    document.querySelector('.modal fade in').addEventListener('click', (e) => {
+    document.getElementById('modal-new-account').addEventListener('click', (e) => {
       e.target.onclick = this.onClose(e)
     })
   }
