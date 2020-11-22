@@ -87,7 +87,7 @@ class App {
    * Возвращает всплывающее окно
    * Обращается к объекту App.modals и извлекает
    * из него свойство modalName:
-   * App.getModal( 'login' ); // извелекает App.modals.login
+   * App.getModal( 'login' ); // извлекает App.modals.login
    * */
   static getModal( modalName ) {
     return this.modals[ modalName ];

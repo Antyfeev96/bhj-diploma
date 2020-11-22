@@ -1,4 +1,4 @@
-const { response } = require("express");
+// const { response } = require("express");
 
 /**
  * Класс Sidebar отвечает за работу боковой колонки:
@@ -36,19 +36,20 @@ class Sidebar {
   static initAuthLinks() {
 
     document.querySelector('.menu-item_register').addEventListener('click', () => {
-      Modal.open(App.getModal)
+      App.getModal('register').open();
     })
 
+    
+
     document.querySelector('.menu-item_login').addEventListener('click', () => {
-      Modal.open(App.getModal)
+      App.getModal('login').open()
     })
 
     document.querySelector('.menu-item_logout').addEventListener('click', () => {
-     User.logout();
-     if (response.success) {
-      App.setState('init')
-     }
+      User.logout();
+      App.setState('init');
     })
+
   }
   
 }

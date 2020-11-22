@@ -13,7 +13,12 @@ class Modal {
    * необходимо выкинуть ошибку.
    * */
   constructor(elem) {
-    elem === '' ? new Error('Ошибка') : this.element = elem, this.registerEvents(); 
+    if (elem === '' || elem === null || !elem) {
+      return new Error('Ошибка');
+    } else {
+      this.element = elem;
+      this.registerEvents();
+    }
   }
 
   /**
@@ -22,14 +27,10 @@ class Modal {
    * (с помощью метода Modal.onClose)
    * */
   registerEvents() {
-    // this.element.getElementsByTagName('data-dismiss').forEach(item => {
-    //   item.addEventListener('click', () => {
-    //     this.onClose(e);
-    //   })
-    // })
-
-    document.getElementById('modal-new-account').addEventListener('click', (e) => {
-      e.target.onclick = this.onClose(e)
+    this.element.querySelectorAll('[data-dismiss]').forEach(item => {
+      item.addEventListener('click', () => {
+        this.onClose();
+      })
     })
   }
 
@@ -38,8 +39,8 @@ class Modal {
    * Закрывает текущее окно (Modal.close())
    * */
   onClose( e ) {
-    e.preventDefault()
-    this.element.querySelectorAll('[data-dismiss]').forEach(item => this.close())
+    // e.preventDefault() - не понадобилось, страница и так не перезагружается
+    this.close()
   }
   /**
    * Удаляет обработчики событий

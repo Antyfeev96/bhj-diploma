@@ -13,8 +13,12 @@ class AsyncForm {
    * через registerEvents()
    * */
   constructor(elem) {
-    elem === '' ? new Error('Ошибка') : this.element = elem , this.registerEvents();
-    this.form = document.querySelector('.form')
+    if (elem === '' || elem === null || !elem) {
+      return new Error('Ошибка');
+    } else {
+      this.element = elem;
+      this.registerEvents();
+    }
   }
 
   /**
@@ -22,7 +26,7 @@ class AsyncForm {
    * вызывает метод submit()
    * */
   registerEvents() {
-    this.form.addEventListener('onsubmit',(e) => {
+    this.element.addEventListener('onsubmit',(e) => {
       e.preventDefault();
       this.submit()
     })
