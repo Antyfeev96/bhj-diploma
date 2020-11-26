@@ -1,5 +1,3 @@
-// const { response } = require("express");
-
 /**
  * Класс Sidebar отвечает за работу боковой колонки:
  * кнопки скрытия/показа колонки в мобильной версии сайта
@@ -35,19 +33,36 @@ class Sidebar {
    * */
   static initAuthLinks() {
 
-    document.querySelector('.menu-item_register').addEventListener('click', () => {
+    document.querySelector('.menu-item_register').addEventListener('click', (e) => {
+      e.preventDefault()
       App.getModal('register').open();
     })
 
     
 
-    document.querySelector('.menu-item_login').addEventListener('click', () => {
+    document.querySelector('.menu-item_login').addEventListener('click', (e) => {
+      e.preventDefault()
       App.getModal('login').open()
     })
 
-    document.querySelector('.menu-item_logout').addEventListener('click', () => {
-      User.logout();
-      App.setState('init');
+    document.querySelector('.menu-item_logout').addEventListener('click', (e) => {
+      e.preventDefault();
+      User.logout((err,response) => {
+        if (response.success) {
+          console.log('Костыль')
+        }
+      })
+      console.log('Еще костыль')
+      App.setState('init') //такая реализация работает, хотя она синхронная, вообще User.logout должен вызываться
+      // с data, а потом уже с колбеком (err, response), но тут нет никакой передачи аргумента, как options в LoginForm
+      // или RegisterForm, поэтому наверное что-то я сделал не то
+
+      // User.logout((err,response) => {
+      //   if (response.success) {
+      //     App.setState('init')
+      //   }
+      // }) а такая реализация не работает, хотя она асинхронная, как так???
+
     })
 
   }
