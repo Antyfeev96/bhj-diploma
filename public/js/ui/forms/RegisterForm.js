@@ -12,7 +12,8 @@ class RegisterForm extends AsyncForm {
    * */
   onSubmit( options ) {
     User.register(options, (err, response) => {
-      if (response.success) {
+      console.log(JSON.parse(response));
+      if (JSON.parse(response).success) {
         App.setState( 'user-logged' )
         App.getModal('register').close()
       }

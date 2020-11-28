@@ -98,42 +98,63 @@
       "email": "griizly@rambler.rughghghg",
       "password": "123",
       "id": "qhlpjjlskhxtu7p8",
-      "isAuthorized": true
+      "isAuthorized": false
     },
     {
       "name": "human aggro",
       "email": "mishka4fun@gmail.com",
       "password": "123",
       "id": "qhlpjf3okhxv38iv",
-      "isAuthorized": true
+      "isAuthorized": false
     },
     {
       "name": "Tony",
       "email": "griizly@rambler.ruqwqwqw",
       "password": "123",
       "id": "qhlpjer8khxvamjm",
-      "isAuthorized": true
+      "isAuthorized": false
     },
     {
       "name": "Дмитрий123",
       "email": "griizly@rambler.rudhhjgfh",
       "password": "123",
       "id": "qhlpjfqwkhxvdwjw",
-      "isAuthorized": true
+      "isAuthorized": false
     },
     {
       "name": "Дмитрий Антюфеев",
       "email": "griizly@rambler.ruqqqq",
       "password": "123",
       "id": "qhlpjfv4khyodp4k",
-      "isAuthorized": true
+      "isAuthorized": false
     },
     {
       "name": "Дмитрий",
       "email": "griizly@rambler.ru11111",
       "password": "123",
       "id": "qhlpj82gkhyollnu",
-      "isAuthorized": true
+      "isAuthorized": false
+    },
+    {
+      "name": "Дмитрий Антюфеев",
+      "email": "griizly@rambler.ru121212",
+      "password": "123",
+      "id": "qhlpj9qski1jivqz",
+      "isAuthorized": false
+    },
+    {
+      "name": "Когти",
+      "email": "dmitrynamassov@yandex.ru123123",
+      "password": "123",
+      "id": "qhlpjjzoki1jk59y",
+      "isAuthorized": false
+    },
+    {
+      "name": "Дмитрий Антюфеев",
+      "email": "griizly@rambler.ru111111",
+      "password": "123",
+      "id": "qhlpj3w8ki1jlrpy",
+      "isAuthorized": false
     }
   ],
   "accounts": [

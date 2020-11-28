@@ -11,6 +11,13 @@ class CreateAccountForm {
    * и сбрасывает форму
    * */
   onSubmit( options ) {
-
+    Account.create(options, (err, response) => {
+      console.log(JSON.parse(response));
+      if (JSON.parse(response)) {
+        App.getForm(options).close()
+      }
+      App.getForm(options).reset();
+      App.update();
+    })
   }
 }

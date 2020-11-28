@@ -45,23 +45,26 @@ class Sidebar {
       App.getModal('login').open()
     })
 
-    document.querySelector('.menu-item_logout').addEventListener('click', (e) => {
-      e.preventDefault();
+    document.querySelector('.menu-item_logout').addEventListener('click', () => {
+      
       User.logout((err,response) => {
-        if (response.success) {
+        console.log(JSON.parse(response));
+        if (JSON.parse(response).success) {
           console.log('Костыль')
         }
       })
       console.log('Еще костыль')
-      App.setState('init') //такая реализация работает, хотя она синхронная, вообще User.logout должен вызываться
-      // с data, а потом уже с колбеком (err, response), но тут нет никакой передачи аргумента, как options в LoginForm
-      // или RegisterForm, поэтому наверное что-то я сделал не то
+      App.setState('init') // почему этот вариант работает, хотя он синхронный, а нижний нет, хотя он асинхронный?
+      // даже localStorage чистится нормально. И еще вопрос, в отличие от LoginForm, где передается options, здесь
+      // ничего не передается, поэтому непонятно, что ставить в аргумент data, возможно как раз из-за отсутствия аргумента
+      // метод не работает.
 
-      // User.logout((err,response) => {
-      //   if (response.success) {
+      // User.logout((err, response) => {
+      //   console.log(JSON.parse(response).success);
+      //   if (JSON.parse(response).success) { 
       //     App.setState('init')
       //   }
-      // }) а такая реализация не работает, хотя она асинхронная, как так???
+      // })
 
     })
 

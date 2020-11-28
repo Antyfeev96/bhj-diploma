@@ -13,7 +13,12 @@ class AccountsWidget {
    * необходимо выкинуть ошибку.
    * */
   constructor( element ) {
-
+    if (!element) {
+      return new Error('Ошибка')
+    }
+    this.element = element;
+    this.registerEvents();
+    this.update()
   }
 
   /**
@@ -25,6 +30,17 @@ class AccountsWidget {
    * */
   registerEvents() {
 
+    this.element.addEventListener('submit',(e) => {
+      e.preventDefault();
+    })
+
+    document.querySelector('.create-account ').addEventListener('click', () => {
+      App.getModal('createAccount').open()
+    })
+
+    document.querySelectorAll('.account').forEach(item => item.addEventListener('click', ()=> {
+      this.onSelectAccount();
+    }))
   }
 
   /**
@@ -38,7 +54,15 @@ class AccountsWidget {
    * метода renderItem()
    * */
   update() {
-
+    if (User.current()) {
+      Account.list(User.current(), (err, response) => {
+        if (JSON.parse(response)) {
+          return JSON.parse(response)
+        }
+        Array.from(JSON.parse(response)).forEach(item => this.renderItem(item))
+        this.clear();
+      })
+    }
   }
 
   /**
@@ -47,7 +71,7 @@ class AccountsWidget {
    * в боковой колонке
    * */
   clear() {
-
+    document.querySelectorAll('.account').forEach(item => item.remove())
   }
 
   /**
@@ -58,7 +82,8 @@ class AccountsWidget {
    * Вызывает App.showPage( 'transactions', { account_id: id_счёта });
    * */
   onSelectAccount( element ) {
-
+    element.classList.add('active');
+    App.showPage('transactions',{ account_id: JSON.parse(localStorage.user).id})
   }
 
   /**
@@ -67,7 +92,14 @@ class AccountsWidget {
    * item - объект с данными о счёте
    * */
   getAccountHTML( item ) {
-
+    return `
+    <li class="active account" data-id=${item.id}>
+    <a href="#">
+        <span>${item.name}</span>
+        <span>${item.sum} ₽</span>
+    </a>
+</li>
+    `
   }
 
   /**
@@ -77,6 +109,6 @@ class AccountsWidget {
    * и добавляет его внутрь элемента виджета
    * */
   renderItem( item ) {
-
+    document.querySelector('.accounts-panel').innerHTML = this.getAccountHTML(item)
   }
 }

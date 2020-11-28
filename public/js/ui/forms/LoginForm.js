@@ -12,7 +12,7 @@ class LoginForm extends AsyncForm {
    * */
   onSubmit( options ) {
     User.login(options, (err, response) => {
-      if (response.success) {
+      if (JSON.parse(response).success) {
         App.setState( 'user-logged' )
         App.getModal('login').close()
       }

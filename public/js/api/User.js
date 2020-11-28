@@ -26,7 +26,7 @@ class User {
    * из локального хранилища
    * */
   static current() {
-    return JSON.parse(localStorage.getItem('user'))
+    return JSON.parse(localStorage.getItem('user'));
   }
 
   /**
@@ -40,8 +40,8 @@ class User {
       responseType: 'json',
       data,
       callback: (err, response) => {
-        if (response.success) {
-          this.setCurrent(response.user)
+        if (JSON.parse(response).success) {
+          this.setCurrent(JSON.parse(response).user)
         } else {
           this.unsetCurrent()
         }
@@ -63,8 +63,8 @@ class User {
       responseType: 'json',
       data,
       callback: (err, response) => {
-        if (response.success) {
-          this.setCurrent(response.user)
+        if (JSON.parse(response).success) {
+          this.setCurrent(JSON.parse(response).user)
         }
         callback(err,response)
       }
@@ -84,8 +84,8 @@ class User {
       responseType: 'json',
       data,
       callback: (err, response) => {
-        if (response.success) {
-          this.setCurrent(response.user)
+        if (JSON.parse(response).success) {
+          this.setCurrent(JSON.parse(response).user)
         }
         callback(err,response)
       }
@@ -103,7 +103,7 @@ class User {
       responseType: 'json',
       data,
       callback: (err, response) => {
-        if (response.success) {
+        if (JSON.parse(response).success) {
           this.unsetCurrent()
         }
         callback(err,response)

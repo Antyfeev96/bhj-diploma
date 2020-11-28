@@ -13,7 +13,7 @@ class Modal {
    * необходимо выкинуть ошибку.
    * */
   constructor(elem) {
-    if (elem === '' || elem === null || !elem) {
+    if (!elem) {
       return new Error('Ошибка');
     } else {
       this.element = elem;
@@ -39,7 +39,7 @@ class Modal {
    * Закрывает текущее окно (Modal.close())
    * */
   onClose( e ) {
-    // e.preventDefault() - не понадобилось, страница и так не перезагружается
+    e.preventDefault()
     this.close()
   }
   /**
