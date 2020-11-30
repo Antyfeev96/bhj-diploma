@@ -30,9 +30,7 @@ class AccountsWidget {
    * */
   registerEvents() {
 
-    this.element.addEventListener('submit',(e) => {
-      e.preventDefault();
-    })
+    
 
     document.querySelector('.create-account ').addEventListener('click', () => {
       App.getModal('createAccount').open()
