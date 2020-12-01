@@ -176,6 +176,13 @@
       "password": "123",
       "id": "qhlpjck0ki5wv2pf",
       "isAuthorized": false
+    },
+    {
+      "name": "Дмитрий",
+      "email": "griizly@rambler.ruffffffffffffff",
+      "password": "123",
+      "id": "qhlpji78ki683ijh",
+      "isAuthorized": false
     }
   ],
   "accounts": [
@@ -604,6 +611,48 @@
       "name": "Дмитрий",
       "sum": 123,
       "created_at": "2020-12-01T13:01:11.626Z"
+    },
+    {
+      "id": "qhlpjkuoki67j70v",
+      "type": "INCOME",
+      "name": "ggg",
+      "sum": 123,
+      "created_at": "2020-12-01T16:40:13.902Z"
+    },
+    {
+      "id": "qhlpjij8ki67mqxk",
+      "type": "INCOME",
+      "name": "ggg",
+      "sum": 123,
+      "created_at": "2020-12-01T16:42:59.671Z"
+    },
+    {
+      "id": "qhlpj1lgki67na45",
+      "type": "INCOME",
+      "name": "ggg",
+      "sum": 123,
+      "created_at": "2020-12-01T16:43:24.532Z"
+    },
+    {
+      "id": "qhlpj40oki68lwe8",
+      "type": "INCOME",
+      "name": "Дмитрий",
+      "sum": 123,
+      "created_at": "2020-12-01T17:10:19.711Z"
+    },
+    {
+      "id": "qhlpjj6ski68ly7v",
+      "type": "INCOME",
+      "name": "Дмитрий",
+      "sum": 123,
+      "created_at": "2020-12-01T17:10:22.074Z"
+    },
+    {
+      "id": "qhlpju8ki68m056",
+      "type": "INCOME",
+      "name": "Дмитрий",
+      "sum": 123,
+      "created_at": "2020-12-01T17:10:24.569Z"
     }
   ]
 }

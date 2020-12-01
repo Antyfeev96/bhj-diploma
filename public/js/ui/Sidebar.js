@@ -47,24 +47,12 @@ class Sidebar {
 
     document.querySelector('.menu-item_logout').addEventListener('click', () => {
       
-      User.logout((err,response) => {
-        console.log(JSON.parse(response));
-        if (JSON.parse(response).success) {
-          console.log('Костыль')
+      User.logout(User.current(), (err,response) => {
+        if (response.success) {
+          App.setState('init')
         }
       })
-      console.log('Еще костыль')
-      App.setState('init') // почему этот вариант работает, хотя он синхронный, а нижний нет, хотя он асинхронный?
-      // даже localStorage чистится нормально. И еще вопрос, в отличие от LoginForm, где передается options, здесь
-      // ничего не передается, поэтому непонятно, что ставить в аргумент data, возможно как раз из-за отсутствия аргумента
-      // метод не работает.
-
-      // User.logout((err, response) => {
-      //   console.log(JSON.parse(response).success);
-      //   if (JSON.parse(response).success) { 
-      //     App.setState('init')
-      //   }
-      // })
+      
 
     })
 
