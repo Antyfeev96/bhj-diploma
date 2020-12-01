@@ -38,8 +38,7 @@ class Modal {
    * Срабатывает после нажатия на элементы, закрывающие окно.
    * Закрывает текущее окно (Modal.close())
    * */
-  onClose( e ) {
-    e.preventDefault()
+  onClose() {
     this.close()
   }
   /**
@@ -60,7 +59,7 @@ class Modal {
   /**
    * Закрывает окно: удаляет CSS-свойство display
    * */
-  close(){
+  close() {
     this.element.style.removeProperty('display')
   }
 }

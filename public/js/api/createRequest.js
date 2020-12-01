@@ -37,7 +37,7 @@ const createRequest = (options) => {
 
   xhr.addEventListener("readystatechange", () => {
     if (xhr.status === 200 && xhr.readyState === 4) {
-      options.callback(xhr.response.success, xhr.response);
+      options.callback(JSON.parse(xhr.response).success, JSON.parse(xhr.response));
     }
   });
   

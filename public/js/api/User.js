@@ -40,8 +40,8 @@ class User {
       responseType: 'json',
       data,
       callback: (err, response) => {
-        if (JSON.parse(response).success) {
-          this.setCurrent(JSON.parse(response).user)
+        if (response.success) {
+          this.setCurrent(response.user)
         } else {
           this.unsetCurrent()
         }
@@ -63,8 +63,8 @@ class User {
       responseType: 'json',
       data,
       callback: (err, response) => {
-        if (JSON.parse(response).success) {
-          this.setCurrent(JSON.parse(response).user)
+        if (response.success) {
+          this.setCurrent(response.user)
         }
         callback(err,response)
       }
@@ -84,8 +84,8 @@ class User {
       responseType: 'json',
       data,
       callback: (err, response) => {
-        if (JSON.parse(response).success) {
-          this.setCurrent(JSON.parse(response).user)
+        if (response.success) {
+          this.setCurrent(response.user)
         }
         callback(err,response)
       }
@@ -103,7 +103,7 @@ class User {
       responseType: 'json',
       data,
       callback: (err, response) => {
-        if (JSON.parse(response).success) {
+        if (response.success) {
           this.unsetCurrent()
         }
         callback(err,response)

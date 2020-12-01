@@ -30,13 +30,11 @@ class AccountsWidget {
    * */
   registerEvents() {
 
-    
-
-    document.querySelector('.create-account ').addEventListener('click', () => {
-      App.getModal('createAccount').open()
+    document.querySelector('.create-account').addEventListener('click', () => {
+      App.getModal('createAccount').open();
     })
 
-    document.querySelectorAll('.account').forEach(item => item.addEventListener('click', ()=> {
+    Array.from(document.querySelectorAll('.account')).forEach(item => item.addEventListener('click', ()=> {
       this.onSelectAccount();
     }))
   }
@@ -52,15 +50,12 @@ class AccountsWidget {
    * метода renderItem()
    * */
   update() {
-    if (User.current()) {
       Account.list(User.current(), (err, response) => {
-        if (JSON.parse(response)) {
-          return JSON.parse(response)
+        if (response.success) {
+          this.clear();
+          Array.from(response.data).forEach(item => this.renderItem(item))
         }
-        Array.from(JSON.parse(response)).forEach(item => this.renderItem(item))
-        this.clear();
       })
-    }
   }
 
   /**
@@ -80,8 +75,8 @@ class AccountsWidget {
    * Вызывает App.showPage( 'transactions', { account_id: id_счёта });
    * */
   onSelectAccount( element ) {
-    element.classList.add('active');
-    App.showPage('transactions',{ account_id: JSON.parse(localStorage.user).id})
+    element.querySelectorAll('.account').classList.toggle('active');
+    App.showPage('transactions',{ account_id: localStorage.user.id})
   }
 
   /**
@@ -107,6 +102,6 @@ class AccountsWidget {
    * и добавляет его внутрь элемента виджета
    * */
   renderItem( item ) {
-    document.querySelector('.accounts-panel').innerHTML = this.getAccountHTML(item)
+    document.querySelector('.accounts-panel').innerHTML += this.getAccountHTML(item)
   }
 }
