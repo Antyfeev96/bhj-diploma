@@ -19,6 +19,7 @@ class AccountsWidget {
     this.element = element;
     this.registerEvents();
     this.update()
+    
   }
 
   /**
@@ -30,13 +31,17 @@ class AccountsWidget {
    * */
   registerEvents() {
 
-    document.querySelector('.create-account').addEventListener('click', () => {
-      App.getModal('createAccount').open();
+    this.element.querySelector('.create-account').addEventListener('click', () => {
+      
     })
 
-    Array.from(document.querySelectorAll('.account')).forEach(item => item.addEventListener('click', ()=> {
-      this.onSelectAccount();
-    }))
+    this.element.addEventListener('click', (event) => {
+        if (event.target.closest('.account')) {
+          this.onSelectAccount(event.target) 
+        } else if (event.target.closest('.pull-right')) {
+          App.getModal('createAccount').open();
+        }
+    })
   }
 
   /**
@@ -53,7 +58,7 @@ class AccountsWidget {
       Account.list(User.current(), (err, response) => {
         if (response.success) {
           this.clear();
-          Array.from(response.data).forEach(item => this.renderItem(item))
+          response.data.forEach(item => this.renderItem(item))
         }
       })
   }
@@ -75,8 +80,21 @@ class AccountsWidget {
    * Вызывает App.showPage( 'transactions', { account_id: id_счёта });
    * */
   onSelectAccount( element ) {
-    element.querySelectorAll('.account').classList.toggle('active');
-    App.showPage('transactions',{ account_id: localStorage.user.id})
+
+      if (element.closest('.accounts-panel').querySelector('.active')) {
+
+        if (element.closest('.account') === element.closest('.accounts-panel').querySelector('.active')) {
+          element.closest('.account').classList.remove('active')
+        } else {
+          element.closest('.accounts-panel').querySelector('.active').classList.remove('active')
+          element.closest('.account').classList.add('active')
+        }
+
+      } else {
+        element.closest('.account').classList.add('active')
+      }
+      
+    App.showPage('transactions', { account_id: element.closest('.account').dataset.id })
   }
 
   /**
@@ -86,7 +104,7 @@ class AccountsWidget {
    * */
   getAccountHTML( item ) {
     return `
-    <li class="active account" data-id=${item.id}>
+    <li class="account" data-id=${item.id}>
     <a href="#">
         <span>${item.name}</span>
         <span>${item.sum} ₽</span>

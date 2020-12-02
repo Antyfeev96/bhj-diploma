@@ -8,8 +8,9 @@ class CreateTransactionForm extends AsyncForm {
    * Вызывает родительский конструктор и
    * метод renderAccountsList
    * */
-  constructor( element ) {
-    super(element)
+  constructor(element) {
+    super(element);
+    this.element = element
     this.renderAccountsList()
   }
 
@@ -21,7 +22,9 @@ class CreateTransactionForm extends AsyncForm {
     Account.list(User.current(), (err, response) => {
       if (response.success) {
         for (let i of response.data) {
-          document.querySelector('.accounts-select').innerHTML += `<option value="${i.id}">${i.name}</option>`
+          document.querySelectorAll('.accounts-select').forEach(item => {
+            item.innerHTML += `<option value="${i.id}">${i.name}</option>`
+          })
         }
       }
     })
@@ -36,8 +39,8 @@ class CreateTransactionForm extends AsyncForm {
   onSubmit( options ) {
     Transaction.create(options, (err, response) => {
       if (response.success) {
-        App.getForm('createAccount').element.reset();
-        App.getModal('createAccount').close();
+        this.element.reset();
+        App.getModal(this.element.closest('.modal').dataset.modalId).close();
         App.update()
       }
     })

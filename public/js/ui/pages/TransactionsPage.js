@@ -11,6 +11,7 @@ class TransactionsPage {
    * через registerEvents()
    * */
   constructor( element ) {
+    console.log(element);
     if (!element) {
       return new Error('Ошибка')
     }
@@ -92,9 +93,11 @@ class TransactionsPage {
    * */
   render( options ) {
     
+    this.lastOptions = options;
+    console.log(this.lastOptions);
+    
     if (!options) {
       console.log('Ошибка');
-      return false
     }
 
     Account.get(this.lastOptions, (err, response) => {
@@ -105,7 +108,6 @@ class TransactionsPage {
 
     Transaction.list(options, (err,response) => {
       if (response.success) {
-        console.log(response);
         this.renderTransactions(response);
       }
     })
@@ -215,6 +217,7 @@ class TransactionsPage {
    * используя getTransactionHTML
    * */
   renderTransactions( data ) {
-    data.forEach(item => this.element.querySelector('.content').innerHTML += this.getTransactionHTML(item))
+    console.log(this.element.querySelector('.content'));
+    data.data.forEach(item => this.element.querySelector('.content').innerHTML += this.getTransactionHTML(item))
   }
 }

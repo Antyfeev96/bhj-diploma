@@ -390,6 +390,11 @@
       "name": "123",
       "user_id": "qhlpjck0ki5wv2pf",
       "id": "qhlpjlz8ki5wvm3b"
+    },
+    {
+      "name": "Самость",
+      "user_id": "qhlpjii4khxlgnxh",
+      "id": "qhlpjfgoki7dn155"
     }
   ],
   "transactions": [
@@ -653,6 +658,321 @@
       "name": "Дмитрий",
       "sum": 123,
       "created_at": "2020-12-01T17:10:24.569Z"
+    },
+    {
+      "id": "qhlpjbv8ki7cgc7u",
+      "type": "INCOME",
+      "name": "Дмитрий",
+      "sum": 123,
+      "created_at": "2020-12-02T11:45:44.921Z"
+    },
+    {
+      "id": "qhlpjdy0ki7cge8o",
+      "type": "INCOME",
+      "name": "Дмитрий",
+      "sum": 123,
+      "created_at": "2020-12-02T11:45:47.543Z"
+    },
+    {
+      "id": "qhlpjmvski7chq6v",
+      "type": "INCOME",
+      "name": "Дмитрий",
+      "sum": 123,
+      "created_at": "2020-12-02T11:46:49.686Z"
+    },
+    {
+      "id": "qhlpjazoki7cs0gr",
+      "type": "INCOME",
+      "name": "Когти",
+      "sum": 123,
+      "created_at": "2020-12-02T11:54:49.562Z"
+    },
+    {
+      "id": "qhlpjmsoki7cs2dl",
+      "type": "INCOME",
+      "name": "Когти",
+      "sum": 123,
+      "created_at": "2020-12-02T11:54:52.040Z"
+    },
+    {
+      "id": "qhlpj2xkki7cv5ze",
+      "type": "INCOME",
+      "name": "Дмитрий",
+      "sum": 123,
+      "created_at": "2020-12-02T11:57:16.681Z"
+    },
+    {
+      "id": "qhlpjh6kki7cvaha",
+      "type": "INCOME",
+      "name": "Дмитрий",
+      "sum": 123,
+      "created_at": "2020-12-02T11:57:22.509Z"
+    },
+    {
+      "id": "qhlpj8gkki7h1ucr",
+      "type": "INCOME",
+      "name": "Штаны",
+      "sum": 12,
+      "created_at": "2020-12-02T13:54:26.666Z"
+    },
+    {
+      "id": "qhlpjkvwki7h59ej",
+      "type": "INCOME",
+      "name": "Штаны",
+      "sum": 15,
+      "created_at": "2020-12-02T13:57:06.138Z"
+    },
+    {
+      "id": "qhlpjm5gki7h60rw",
+      "type": "INCOME",
+      "name": "Штаны",
+      "sum": 15,
+      "created_at": "2020-12-02T13:57:41.611Z"
+    },
+    {
+      "id": "qhlpjgxkki7h6ml0",
+      "type": "INCOME",
+      "name": "Штаны",
+      "sum": 15,
+      "created_at": "2020-12-02T13:58:09.875Z"
+    },
+    {
+      "id": "qhlpj83gki7h6vbh",
+      "type": "INCOME",
+      "name": "Штаны",
+      "sum": 15,
+      "created_at": "2020-12-02T13:58:21.196Z"
+    },
+    {
+      "id": "qhlpjlpcki7hhrps",
+      "type": "INCOME",
+      "name": "Штаны",
+      "sum": 15,
+      "created_at": "2020-12-02T14:06:49.743Z"
+    },
+    {
+      "id": "qhlpjihski7hj04y",
+      "type": "INCOME",
+      "name": "Штаны",
+      "sum": 15,
+      "created_at": "2020-12-02T14:07:47.313Z"
+    },
+    {
+      "id": "qhlpj82gki7hjiba",
+      "type": "INCOME",
+      "name": "Штаны",
+      "sum": 15,
+      "created_at": "2020-12-02T14:08:10.869Z"
+    },
+    {
+      "id": "qhlpjatski7hjk2h",
+      "type": "INCOME",
+      "name": "Штаны",
+      "sum": 15,
+      "created_at": "2020-12-02T14:08:13.144Z"
+    },
+    {
+      "id": "qhlpjhz4ki7hnlwk",
+      "type": "INCOME",
+      "name": "Штаны",
+      "sum": 15,
+      "created_at": "2020-12-02T14:11:22.148Z"
+    },
+    {
+      "id": "qhlpj3akki7htl1w",
+      "type": "INCOME",
+      "name": "Штаны",
+      "sum": 15,
+      "created_at": "2020-12-02T14:16:00.979Z"
+    },
+    {
+      "id": "qhlpjm7kki7k91hf",
+      "type": "INCOME",
+      "name": "Штаны",
+      "sum": 15,
+      "created_at": "2020-12-02T15:24:01.346Z"
+    },
+    {
+      "id": "qhlpj9ncki7kc13i",
+      "type": "INCOME",
+      "name": "Штаны",
+      "sum": 15,
+      "created_at": "2020-12-02T15:26:20.813Z"
+    },
+    {
+      "id": "qhlpjitski7kd33b",
+      "type": "INCOME",
+      "name": "Штаны",
+      "sum": 15,
+      "created_at": "2020-12-02T15:27:10.054Z"
+    },
+    {
+      "id": "qhlpjgnkki7kedlt",
+      "type": "INCOME",
+      "name": "Штаны",
+      "sum": 15,
+      "created_at": "2020-12-02T15:28:10.336Z"
+    },
+    {
+      "id": "qhlpj48wki7kfszh",
+      "type": "INCOME",
+      "name": "Штаны",
+      "sum": 15,
+      "created_at": "2020-12-02T15:29:16.925Z"
+    },
+    {
+      "id": "qhlpjmtwki7kg31x",
+      "type": "INCOME",
+      "name": "Штаны",
+      "sum": 15,
+      "created_at": "2020-12-02T15:29:29.972Z"
+    },
+    {
+      "id": "qhlpjdq8ki7kgy3n",
+      "type": "INCOME",
+      "name": "Штаны",
+      "sum": 15,
+      "created_at": "2020-12-02T15:30:10.210Z"
+    },
+    {
+      "id": "qhlpjbdcki7kh90z",
+      "type": "INCOME",
+      "name": "Штаны",
+      "sum": 15,
+      "created_at": "2020-12-02T15:30:24.371Z"
+    },
+    {
+      "id": "qhlpjfn8ki7kko5e",
+      "type": "EXPENSE",
+      "name": "Штаны",
+      "sum": 15,
+      "created_at": "2020-12-02T15:33:03.937Z"
+    },
+    {
+      "id": "qhlpj9d4ki7ko0al",
+      "type": "INCOME",
+      "name": "Штаны",
+      "sum": 15,
+      "created_at": "2020-12-02T15:35:39.644Z"
+    },
+    {
+      "id": "qhlpjleoki7kol74",
+      "type": "EXPENSE",
+      "name": "Штаны",
+      "sum": 15,
+      "created_at": "2020-12-02T15:36:06.735Z"
+    },
+    {
+      "id": "qhlpjip4ki7kpwcb",
+      "type": "INCOME",
+      "name": "Штаны",
+      "sum": 15,
+      "created_at": "2020-12-02T15:37:07.834Z"
+    },
+    {
+      "id": "qhlpjd2kki7kuv54",
+      "type": "INCOME",
+      "name": "Штаны",
+      "sum": 15,
+      "created_at": "2020-12-02T15:40:59.559Z"
+    },
+    {
+      "id": "qhlpji1kki7kuyn2",
+      "type": "EXPENSE",
+      "name": "Штаны",
+      "sum": 15,
+      "created_at": "2020-12-02T15:41:04.093Z"
+    },
+    {
+      "id": "qhlpjmfkki7kzd4o",
+      "type": "INCOME",
+      "name": "Штаны",
+      "sum": 15,
+      "created_at": "2020-12-02T15:44:29.495Z"
+    },
+    {
+      "id": "qhlpjhd4ki7kzhv7",
+      "type": "EXPENSE",
+      "name": "Дмитрий",
+      "sum": 15,
+      "created_at": "2020-12-02T15:44:35.634Z"
+    },
+    {
+      "id": "qhlpjcwski7l2iwq",
+      "type": "INCOME",
+      "name": "Штаны",
+      "sum": 15,
+      "created_at": "2020-12-02T15:46:56.953Z"
+    },
+    {
+      "id": "qhlpjj2gki7lhr6w",
+      "type": "INCOME",
+      "name": "Штаны",
+      "sum": 15,
+      "created_at": "2020-12-02T15:58:47.527Z"
+    },
+    {
+      "id": "qhlpjmm8ki7lmt26",
+      "type": "INCOME",
+      "name": "Штаны",
+      "sum": 15,
+      "created_at": "2020-12-02T16:02:43.229Z"
+    },
+    {
+      "id": "qhlpjm3ski7lpx03",
+      "type": "INCOME",
+      "name": "Штаны",
+      "sum": 15,
+      "created_at": "2020-12-02T16:05:08.306Z"
+    },
+    {
+      "id": "qhlpjmcwki7lq0ox",
+      "type": "EXPENSE",
+      "name": "Штаны",
+      "sum": 15,
+      "created_at": "2020-12-02T16:05:13.088Z"
+    },
+    {
+      "id": "qhlpjj6ski7lqkna",
+      "type": "INCOME",
+      "name": "Штаны",
+      "sum": 15,
+      "created_at": "2020-12-02T16:05:38.949Z"
+    },
+    {
+      "id": "qhlpjl18ki7lrvmm",
+      "type": "INCOME",
+      "name": "Штаны",
+      "sum": 15,
+      "created_at": "2020-12-02T16:06:39.837Z"
+    },
+    {
+      "id": "qhlpj1jski7luq8i",
+      "type": "INCOME",
+      "name": "Штаны",
+      "sum": 15,
+      "created_at": "2020-12-02T16:08:52.817Z"
+    },
+    {
+      "id": "qhlpj60oki7lv1k2",
+      "type": "INCOME",
+      "name": "Когти",
+      "sum": 15,
+      "created_at": "2020-12-02T16:09:07.489Z"
+    },
+    {
+      "id": "qhlpjah0ki7ny5ct",
+      "type": "INCOME",
+      "name": "Штаны",
+      "sum": 15,
+      "created_at": "2020-12-02T17:07:31.612Z"
+    },
+    {
+      "id": "qhlpjm8oki7o3r7e",
+      "type": "INCOME",
+      "name": "Штаны",
+      "sum": 15,
+      "created_at": "2020-12-02T17:11:53.209Z"
     }
   ]
 }
