@@ -11,7 +11,6 @@ class TransactionsPage {
    * через registerEvents()
    * */
   constructor( element ) {
-    console.log(element);
     if (!element) {
       return new Error('Ошибка')
     }
@@ -76,6 +75,9 @@ class TransactionsPage {
    * По удалению транзакции вызовите метод App.update()
    * */
   removeTransaction( id ) {
+    if (!this.lastOptions) {
+      return false
+    }
     if (confirm('Вы точно хотите удалить счёт?')) {
     Transaction.remove(id, (err, response) => {
       if (response.success) {
@@ -94,21 +96,24 @@ class TransactionsPage {
   render( options ) {
     
     this.lastOptions = options;
-    console.log(this.lastOptions);
+    console.log(User.current());
     
     if (!options) {
       console.log('Ошибка');
     }
 
-    Account.get(this.lastOptions, (err, response) => {
+    Account.get(this.lastOptions.account_id, (err, response) => {
+      console.log(response);
+      console.log(this.lastOptions);
       if (response.success) {
         this.renderTitle()
       }
     })
 
-    Transaction.list(options, (err,response) => {
+    Transaction.list(this.lastOptions, (err,response) => {
+      console.log(response);
       if (response.success) {
-        this.renderTransactions(response);
+        this.renderTransactions(this.lastOptions);
       }
     })
 
@@ -123,7 +128,7 @@ class TransactionsPage {
   clear() {
     this.renderTransactions([]);
     this.renderTitle('Название счёта');
-    this.lastOptions = ''
+    this.lastOptions = null
   }
 
   /**
@@ -217,7 +222,7 @@ class TransactionsPage {
    * используя getTransactionHTML
    * */
   renderTransactions( data ) {
-    console.log(this.element.querySelector('.content'));
-    data.data.forEach(item => this.element.querySelector('.content').innerHTML += this.getTransactionHTML(item))
+    console.log(data);
+    data.forEach(item => this.element.querySelector('.content').innerHTML += this.getTransactionHTML(item))
   }
 }
