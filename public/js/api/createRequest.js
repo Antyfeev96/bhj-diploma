@@ -12,7 +12,7 @@ const createRequest = (options) => {
 
     options.url += "?";
     for (key in options.data) {
-      options.url += `${key}=${options.data[key]}&`;
+      options.url += `${key}=${options.data[key]}`;
 
     }
   } else {

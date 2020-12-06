@@ -19,7 +19,7 @@ class CreateTransactionForm extends AsyncForm {
    * Обновляет в форме всплывающего окна выпадающий список
    * */
   renderAccountsList() {
-    Account.list(User.current().id, (err, response) => {
+    Account.list(User.current(),(err, response) => {
       if (response.success) {
         for (let i of response.data) {
           document.querySelectorAll('.accounts-select').forEach(item => {
@@ -38,6 +38,7 @@ class CreateTransactionForm extends AsyncForm {
    * */
   onSubmit( options ) {
     Transaction.create(options, (err, response) => {
+      console.log(options);
       if (response.success) {
         this.element.reset();
         App.getModal(this.element.closest('.modal').dataset.modalId).close();

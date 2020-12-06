@@ -395,6 +395,11 @@
       "name": "Самость",
       "user_id": "qhlpjii4khxlgnxh",
       "id": "qhlpjfgoki7dn155"
+    },
+    {
+      "name": "Тест",
+      "user_id": "1",
+      "id": "qhlpjhrkkic2xkm2"
     }
   ],
   "transactions": [
@@ -1092,6 +1097,97 @@
       "name": "Пенсия ",
       "sum": 16,
       "created_at": "2020-12-04T20:06:41.979Z"
+    },
+    {
+      "id": "qhlpjidgkiaplxpk",
+      "type": "INCOME",
+      "name": "Штаны",
+      "sum": 15,
+      "created_at": "2020-12-04T20:17:19.591Z"
+    },
+    {
+      "id": "qhlpjhwckiapqqbi",
+      "type": "INCOME",
+      "name": "Штаны",
+      "sum": 15,
+      "created_at": "2020-12-04T20:21:03.293Z"
+    },
+    {
+      "id": "qhlpjncokiarnlt0",
+      "type": "INCOME",
+      "name": "Штаны",
+      "sum": 15,
+      "created_at": "2020-12-04T21:14:36.707Z"
+    },
+    {
+      "id": "qhlpjjlwkiarzduk",
+      "type": "INCOME",
+      "name": "Штаны",
+      "sum": 14,
+      "created_at": "2020-12-04T21:23:46.267Z"
+    },
+    {
+      "id": "qhlpjgm4kias6q8t",
+      "type": "INCOME",
+      "name": "жыыы",
+      "sum": 13,
+      "created_at": "2020-12-04T21:29:28.924Z"
+    },
+    {
+      "id": "qhlpjnpgkibjpw2e",
+      "type": "EXPENSE",
+      "name": "Штаны",
+      "sum": 15,
+      "created_at": "2020-12-05T10:20:12.565Z"
+    },
+    {
+      "id": "qhlpjm5ckibkaku7",
+      "type": "INCOME",
+      "name": "Штаны",
+      "sum": 15,
+      "created_at": "2020-12-05T10:36:17.790Z"
+    },
+    {
+      "id": "qhlpjlhgkibkauwd",
+      "type": "INCOME",
+      "name": "Штаны",
+      "sum": 15,
+      "created_at": "2020-12-05T10:36:30.828Z"
+    },
+    {
+      "id": "qhlpjhg0kibkbmbs",
+      "type": "INCOME",
+      "name": "work",
+      "sum": 123,
+      "created_at": "2020-12-05T10:37:06.375Z"
+    },
+    {
+      "id": "qhlpjo1wkic0jnpg",
+      "type": "EXPENSE",
+      "name": "Штаны",
+      "sum": 15,
+      "created_at": "2020-12-05T18:11:15.267Z"
+    },
+    {
+      "id": "qhlpjfs8kic13njc",
+      "type": "INCOME",
+      "name": "Когти",
+      "sum": 123,
+      "created_at": "2020-12-05T18:26:48.167Z"
+    },
+    {
+      "id": "qhlpjmk8kic16atx",
+      "type": "INCOME",
+      "name": "Сверхприбыль",
+      "sum": 2,
+      "created_at": "2020-12-05T18:28:51.668Z"
+    },
+    {
+      "id": "qhlpjjkkkic2y1yk",
+      "type": "INCOME",
+      "name": "Штаны",
+      "sum": 15,
+      "created_at": "2020-12-05T19:18:26.155Z"
     }
   ]
 }

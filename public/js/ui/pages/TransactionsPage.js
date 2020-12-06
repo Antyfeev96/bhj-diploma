@@ -22,9 +22,7 @@ class TransactionsPage {
    * Вызывает метод render для отрисовки страницы
    * */
   update() {
-    
-    this.render(this.lastOptions);
-
+      this.render(this.lastOptions);
   }
 
   /**
@@ -60,7 +58,7 @@ class TransactionsPage {
     }
 
     if (confirm('Вы точно хотите удалить счёт?')) {
-      Account.remove(this.lastOptions, (err, response) => {
+      Account.remove(options.account_id, (err, response) => {
         if (response.success) {
           App.update()
         }
@@ -96,27 +94,25 @@ class TransactionsPage {
   render( options ) {
     
     this.lastOptions = options;
-    console.log(User.current());
     
     if (!options) {
-      console.log('Ошибка');
+      return new Error ('Ошибка')
     }
 
-    Account.get(this.lastOptions.account_id, (err, response) => {
-      console.log(response);
-      console.log(this.lastOptions);
+    Account.get(options.account_id, (err, response) => {
       if (response.success) {
-        this.renderTitle()
+        this.renderTitle(response.data.name)
       }
     })
 
-    Transaction.list(this.lastOptions, (err,response) => {
-      console.log(response);
+    Transaction.list(options, (err,response) => {
       if (response.success) {
-        this.renderTransactions(this.lastOptions);
+        console.log(User.current());
+        console.log(response);
+        console.log(options);
+        this.renderTransactions(response.data);
       }
     })
-
 
   }
 
@@ -191,6 +187,7 @@ class TransactionsPage {
    * item - объект с информацией о транзакции
    * */
   getTransactionHTML( item ) {
+    console.log(item);
     return `<div class="transaction transaction_${item.type} row">
     <div class="col-md-7 transaction__details">
       <div class="transaction__icon">
