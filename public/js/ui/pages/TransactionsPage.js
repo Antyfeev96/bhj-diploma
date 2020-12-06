@@ -99,7 +99,7 @@ class TransactionsPage {
       return new Error ('Ошибка')
     }
 
-    Account.get(options.account_id, (err, response) => {
+    Account.get(options.account_id, User.current(), (err, response) => {
       if (response.success) {
         this.renderTitle(response.data.name)
       }

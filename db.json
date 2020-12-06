@@ -1188,6 +1188,20 @@
       "name": "Штаны",
       "sum": 15,
       "created_at": "2020-12-05T19:18:26.155Z"
+    },
+    {
+      "id": "qhlpj6ikkicyvvjy",
+      "type": "INCOME",
+      "name": "Штаны",
+      "sum": 15,
+      "created_at": "2020-12-06T10:12:32.253Z"
+    },
+    {
+      "id": "qhlpjf4wkid1xc7u",
+      "type": "INCOME",
+      "name": "Штаны",
+      "sum": 15,
+      "created_at": "2020-12-06T11:37:39.353Z"
     }
   ]
 }
