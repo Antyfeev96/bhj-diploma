@@ -36,7 +36,7 @@
       "email": "griizly@rambler.ru",
       "password": "123",
       "id": "qhlpjii4khxlgnxh",
-      "isAuthorized": true
+      "isAuthorized": false
     },
     {
       "id": "qhlpjii4khxlgnyg",
@@ -183,14 +183,37 @@
       "password": "123",
       "id": "qhlpji78ki683ijh",
       "isAuthorized": false
+    },
+    {
+      "name": "Дима",
+      "email": "griizly@rambler.ruyuiop",
+      "password": "123",
+      "id": "qhlpjfogkij2ed3w",
+      "isAuthorized": false
+    },
+    {
+      "name": "Дима",
+      "email": "griizly@rambler.ru123333",
+      "password": "123",
+      "id": "qhlpj22ckij2i763",
+      "isAuthorized": false
+    },
+    {
+      "name": "Штаны",
+      "email": "mishka4fun@gmail.com11111",
+      "password": "123",
+      "id": "qhlpj3pkkij2lazu",
+      "isAuthorized": false
+    },
+    {
+      "name": "Штаны",
+      "email": "griizly@rambler.ru999",
+      "password": "123",
+      "id": "qhlpjduwkij2o3a8",
+      "isAuthorized": false
     }
   ],
   "accounts": [
-    {
-      "name": "Банк",
-      "user_id": "1",
-      "id": "1"
-    },
     {
       "name": "Магазин",
       "user_id": "1",
@@ -200,11 +223,6 @@
       "name": "Бизнес",
       "user_id": "1",
       "id": "3"
-    },
-    {
-      "name": "пролролрол",
-      "user_id": "qhlpjii4khxlgnxh",
-      "id": "qhlpj56wki5qcjsx"
     },
     {
       "name": "пролролрол",
@@ -397,9 +415,19 @@
       "id": "qhlpjfgoki7dn155"
     },
     {
-      "name": "Тест",
+      "name": "Банк",
       "user_id": "1",
-      "id": "qhlpjhrkkic2xkm2"
+      "id": "qhlpj8pwkij24fgd"
+    },
+    {
+      "name": "Штаны",
+      "user_id": "qhlpjfogkij2ed3w",
+      "id": "qhlpjav0kij2gavy"
+    },
+    {
+      "name": "Банк",
+      "user_id": "qhlpj22ckij2i763",
+      "id": "qhlpj3o4kij2icd5"
     }
   ],
   "transactions": [
@@ -1202,6 +1230,284 @@
       "name": "Штаны",
       "sum": 15,
       "created_at": "2020-12-06T11:37:39.353Z"
+    },
+    {
+      "id": "qhlpjb7ckihqok1p",
+      "type": "EXPENSE",
+      "name": "Штаны",
+      "sum": 15,
+      "created_at": "2020-12-09T18:21:44.700Z"
+    },
+    {
+      "id": "qhlpjp1kkihsnwfj",
+      "type": "INCOME",
+      "name": "Пенсия ",
+      "sum": 10,
+      "created_at": "2020-12-09T19:17:13.327Z"
+    },
+    {
+      "id": "qhlpjddckiht8gj5",
+      "type": "INCOME",
+      "name": "Пенсия ",
+      "sum": 10,
+      "account_id": "1",
+      "created_at": "2020-12-09T19:33:12.496Z"
+    },
+    {
+      "id": "qhlpjqn0kiht8uwd",
+      "type": "EXPENSE",
+      "name": "Когти",
+      "sum": 15,
+      "account_id": "1",
+      "created_at": "2020-12-09T19:33:31.116Z"
+    },
+    {
+      "id": "qhlpjnggkiht9c0s",
+      "type": "INCOME",
+      "name": "Пенсия ",
+      "sum": 10,
+      "account_id": "qhlpj56wki5qcjsx",
+      "created_at": "2020-12-09T19:33:53.307Z"
+    },
+    {
+      "id": "qhlpjodokihvjv6c",
+      "type": "INCOME",
+      "name": "Пенсия ",
+      "sum": 10,
+      "account_id": "qhlpj9lkkihvjknv",
+      "created_at": "2020-12-09T20:38:03.923Z"
+    },
+    {
+      "id": "qhlpjn48kihvk0f7",
+      "type": "EXPENSE",
+      "name": "Штаны",
+      "sum": 5,
+      "account_id": "qhlpj9lkkihvjknv",
+      "created_at": "2020-12-09T20:38:10.722Z"
+    },
+    {
+      "id": "qhlpjet8kihvx8gs",
+      "type": "INCOME",
+      "name": "Пенсия ",
+      "sum": 15,
+      "account_id": "qhlpjq50kihvwpba",
+      "created_at": "2020-12-09T20:48:27.675Z"
+    },
+    {
+      "id": "qhlpji5ckihvxead",
+      "type": "EXPENSE",
+      "name": "Штаны",
+      "sum": 5,
+      "account_id": "qhlpjq50kihvwpba",
+      "created_at": "2020-12-09T20:48:35.220Z"
+    },
+    {
+      "id": "qhlpjedwkiimmgpc",
+      "type": "INCOME",
+      "name": "Пенсия ",
+      "sum": 15,
+      "account_id": "qhlpj974kiimjf7v",
+      "created_at": "2020-12-10T09:15:54.767Z"
+    },
+    {
+      "id": "qhlpj7kokiimprtg",
+      "type": "INCOME",
+      "name": "Пенсия ",
+      "sum": 15,
+      "account_id": "2",
+      "created_at": "2020-12-10T09:18:29.139Z"
+    },
+    {
+      "id": "qhlpjc1wkiimqo03",
+      "type": "EXPENSE",
+      "name": "Штаны",
+      "sum": 5,
+      "account_id": "qhlpj974kiimjf7v",
+      "created_at": "2020-12-10T09:19:10.850Z"
+    },
+    {
+      "id": "qhlpjex4kiimsevt",
+      "type": "INCOME",
+      "name": "Пенсия ",
+      "sum": 15,
+      "account_id": "qhlpj974kiimjf7v",
+      "created_at": "2020-12-10T09:20:32.344Z"
+    },
+    {
+      "id": "qhlpjcv4kiimutb6",
+      "type": "EXPENSE",
+      "name": "Когти",
+      "sum": 5,
+      "account_id": "qhlpj974kiimjf7v",
+      "created_at": "2020-12-10T09:22:24.353Z"
+    },
+    {
+      "id": "qhlpj3v0kiin6qsw",
+      "type": "INCOME",
+      "name": "Пенсия ",
+      "sum": 15,
+      "account_id": "qhlpj2yskiin5tie",
+      "created_at": "2020-12-10T09:31:40.975Z"
+    },
+    {
+      "id": "qhlpj3ggkiin712e",
+      "type": "EXPENSE",
+      "name": "Штаны",
+      "sum": 5,
+      "account_id": "qhlpj2yskiin5tie",
+      "created_at": "2020-12-10T09:31:54.277Z"
+    },
+    {
+      "id": "qhlpj9xckiinhamb",
+      "type": "INCOME",
+      "name": "Пенсия ",
+      "sum": 15,
+      "account_id": "qhlpjcwwkiinh57n",
+      "created_at": "2020-12-10T09:39:53.218Z"
+    },
+    {
+      "id": "qhlpj7a0kiinvla6",
+      "type": "INCOME",
+      "name": "Пенсия ",
+      "sum": 15,
+      "account_id": "2",
+      "created_at": "2020-12-10T09:51:00.221Z"
+    },
+    {
+      "id": "qhlpj1jgkiinvt7m",
+      "type": "INCOME",
+      "name": "Пенсия ",
+      "sum": 15,
+      "account_id": "qhlpj4r4kiinvhns",
+      "created_at": "2020-12-10T09:51:10.497Z"
+    },
+    {
+      "id": "qhlpjeswkiinvzhi",
+      "type": "EXPENSE",
+      "name": "Штаны",
+      "sum": 5,
+      "account_id": "qhlpj4r4kiinvhns",
+      "created_at": "2020-12-10T09:51:18.629Z"
+    },
+    {
+      "id": "qhlpjeickiinzy8q",
+      "type": "INCOME",
+      "name": "Пенсия ",
+      "sum": 15,
+      "account_id": "qhlpj9rgkiinzs9k",
+      "created_at": "2020-12-10T09:54:23.641Z"
+    },
+    {
+      "id": "qhlpjy4kiio0759",
+      "type": "EXPENSE",
+      "name": "Штаны",
+      "sum": 5,
+      "account_id": "qhlpj9rgkiinzs9k",
+      "created_at": "2020-12-10T09:54:35.180Z"
+    },
+    {
+      "id": "qhlpj1g4kiioxtnw",
+      "type": "INCOME",
+      "name": "Пенсия ",
+      "sum": 15,
+      "account_id": "qhlpjccskiioxlm0",
+      "created_at": "2020-12-10T10:20:44.011Z"
+    },
+    {
+      "id": "qhlpj4f0kiioy2yz",
+      "type": "EXPENSE",
+      "name": "Штаны",
+      "sum": 5,
+      "account_id": "qhlpjccskiioxlm0",
+      "created_at": "2020-12-10T10:20:56.074Z"
+    },
+    {
+      "id": "qhlpj4zckiivct56",
+      "type": "EXPENSE",
+      "name": "Штаны",
+      "sum": 5,
+      "account_id": "qhlpj56wki5qcjsx",
+      "created_at": "2020-12-10T13:20:20.873Z"
+    },
+    {
+      "id": "qhlpjeyckiivrbo9",
+      "type": "INCOME",
+      "name": "Пенсия ",
+      "sum": 15,
+      "account_id": "qhlpjdwgkiivr0ti",
+      "created_at": "2020-12-10T13:31:38.072Z"
+    },
+    {
+      "id": "qhlpj3qkkiivriyq",
+      "type": "EXPENSE",
+      "name": "Пенсия ",
+      "sum": 12,
+      "account_id": "qhlpjdwgkiivr0ti",
+      "created_at": "2020-12-10T13:31:47.521Z"
+    },
+    {
+      "id": "qhlpj6a0kij03m0e",
+      "type": "INCOME",
+      "name": "Пенсия ",
+      "sum": 15,
+      "account_id": "qhlpj780kij03huy",
+      "created_at": "2020-12-10T15:33:09.805Z"
+    },
+    {
+      "id": "qhlpjbqokij03qv5",
+      "type": "EXPENSE",
+      "name": "Штаны",
+      "sum": 12,
+      "account_id": "qhlpj780kij03huy",
+      "created_at": "2020-12-10T15:33:16.097Z"
+    },
+    {
+      "id": "qhlpj3r4kij0gg75",
+      "type": "INCOME",
+      "name": "Пенсия ",
+      "sum": 1000,
+      "account_id": "qhlpjf70kij0g7cr",
+      "created_at": "2020-12-10T15:43:08.800Z"
+    },
+    {
+      "id": "qhlpj2gokij0glux",
+      "type": "EXPENSE",
+      "name": "Штаны",
+      "sum": 15,
+      "account_id": "qhlpjf70kij0g7cr",
+      "created_at": "2020-12-10T15:43:16.136Z"
+    },
+    {
+      "id": "qhlpj7zskij2ew18",
+      "type": "INCOME",
+      "name": "Пенсия ",
+      "sum": 15,
+      "account_id": "qhlpj9cgkij2em7y",
+      "created_at": "2020-12-10T16:37:55.243Z"
+    },
+    {
+      "id": "qhlpj544kij2fev8",
+      "type": "EXPENSE",
+      "name": "Штаны",
+      "sum": 12,
+      "account_id": "qhlpj9cgkij2em7y",
+      "created_at": "2020-12-10T16:38:19.651Z"
+    },
+    {
+      "id": "qhlpj71wkij2fpj0",
+      "type": "INCOME",
+      "name": "заначка",
+      "sum": 1000,
+      "account_id": "qhlpj9cgkij2em7y",
+      "created_at": "2020-12-10T16:38:33.468Z"
+    },
+    {
+      "id": "qhlpj8cwkij2gnfl",
+      "type": "INCOME",
+      "name": "Пенсия ",
+      "sum": 1000,
+      "account_id": "qhlpjav0kij2gavy",
+      "created_at": "2020-12-10T16:39:17.408Z"
     }
   ]
 }

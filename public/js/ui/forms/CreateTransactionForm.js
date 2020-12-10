@@ -19,14 +19,14 @@ class CreateTransactionForm extends AsyncForm {
    * Обновляет в форме всплывающего окна выпадающий список
    * */
   renderAccountsList() {
+    if (!User.current()) {
+      return;
+    }
     Account.list(User.current(),(err, response) => {
       if (response.success) {
-        console.log(this.element.querySelectorAll('.accounts-select'));
-        for (let i of response.data) {
-          this.element.querySelector('.accounts-select').forEach(item => {
-            item.innerHTML += `<option value="${i.id}">${i.name}</option>`
-          })
-        }
+        const select = this.element.querySelector( '.accounts-select' );
+        select.innerHTML = '';
+        response.data.forEach(item => select.innerHTML += `<option value="${item.id}">${item.name}</option>`);
       }
     })
   }

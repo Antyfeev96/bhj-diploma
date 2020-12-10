@@ -12,9 +12,10 @@ class TransactionsPage {
    * */
   constructor( element ) {
     if (!element) {
-      return new Error('Ошибка')
+      return;
     }
     this.element = element;
+    console.log(this.element);
     this.registerEvents();
   }
 
@@ -22,7 +23,7 @@ class TransactionsPage {
    * Вызывает метод render для отрисовки страницы
    * */
   update() {
-      this.render(this.lastOptions);
+    this.render(this.lastOptions)
   }
 
   /**
@@ -33,13 +34,24 @@ class TransactionsPage {
    * */
   registerEvents() {
 
-    this.element.querySelector('.remove-account').addEventListener('click', () => {
-      this.removeAccount()
+
+    this.element.addEventListener('click', (event) => {
+      if (event.target.classList.contains('remove-account')) {
+        this.removeAccount()
+      }
+
+      if (event.target.closest('.transaction__remove')) {
+        this.removeTransaction(event.target.dataset.id)
+      }
     })
 
-    // this.element.querySelector('.transaction__remove').addEventListener('click', () => {
-    //   this.removeTransaction(this.element.querySelector('.transaction__remove').dataset.id)
+    // this.element.querySelector('.remove-account').addEventListener('click', () => {
+    //   this.removeAccount()
     // })
+
+    // this.element.querySelectorAll('.transaction__remove').forEach(item => item.addEventListener('click', () => {
+    //   this.removeTransaction(item.dataset.id)
+    // }))
 
   }
 
@@ -52,17 +64,16 @@ class TransactionsPage {
    * для обновления приложения
    * */
   removeAccount() {
-
+  
     if (!this.lastOptions) {
-      return new Error('Ошибка')
+      return;
     }
 
+
     if (confirm('Вы точно хотите удалить счёт?')) {
-      Account.remove(options.account_id, (err, response) => {
-        if (response.success) {
-          App.update()
-        }
-      })
+      Account.remove(this.lastOptions.account_id, (err, response) => {})
+      this.clear()
+      App.update()
     }
 
   }
@@ -73,16 +84,12 @@ class TransactionsPage {
    * По удалению транзакции вызовите метод App.update()
    * */
   removeTransaction( id ) {
-    if (!this.lastOptions) {
-      return false
-    }
+    
     if (confirm('Вы точно хотите удалить счёт?')) {
-    Transaction.remove(id, (err, response) => {
-      if (response.success) {
-        App.update()
-      }
-    })
+    Transaction.remove(id, (err, response) => {})
+    App.update()
   }
+
 }
 
   /**
@@ -107,9 +114,6 @@ class TransactionsPage {
 
     Transaction.list(options, (err,response) => {
       if (response.success) {
-        console.log(User.current());
-        console.log(response);
-        console.log(options);
         this.renderTransactions(response.data);
       }
     })
@@ -174,7 +178,7 @@ class TransactionsPage {
        month = ' декабря'
     }
 
-    let hours = date.slice(11,13) + ':'
+    let hours = Number(date.slice(11,13)) + 3 + ':'
     
     let minutes = date.slice(14,16)
 
@@ -187,8 +191,7 @@ class TransactionsPage {
    * item - объект с информацией о транзакции
    * */
   getTransactionHTML( item ) {
-    console.log(item);
-    return `<div class="transaction transaction_${item.type} row">
+    return `<div class="transaction transaction_${item.type.toLowerCase()} row">
     <div class="col-md-7 transaction__details">
       <div class="transaction__icon">
           <span class="fa fa-money fa-2x"></span>
@@ -196,7 +199,7 @@ class TransactionsPage {
       <div class="transaction__info">
           <h4 class="transaction__title">${item.name}</h4>
           <!-- дата -->
-          <div class="transaction__date">${item.date}</div>
+          <div class="transaction__date">${this.formatDate(item.created_at)}</div>
       </div>
     </div>
     <div class="col-md-3">
@@ -219,7 +222,7 @@ class TransactionsPage {
    * используя getTransactionHTML
    * */
   renderTransactions( data ) {
-    console.log(data);
+    this.element.querySelector('.content').innerHTML = '';
     data.forEach(item => this.element.querySelector('.content').innerHTML += this.getTransactionHTML(item))
   }
 }

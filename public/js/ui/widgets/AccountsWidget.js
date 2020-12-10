@@ -31,10 +31,6 @@ class AccountsWidget {
    * */
   registerEvents() {
 
-    this.element.querySelector('.create-account').addEventListener('click', () => {
-      
-    })
-
     this.element.addEventListener('click', (event) => {
         if (event.target.closest('.account')) {
           this.onSelectAccount(event.target) 
@@ -42,6 +38,7 @@ class AccountsWidget {
           App.getModal('createAccount').open();
         }
     })
+    
   }
 
   /**
@@ -55,12 +52,18 @@ class AccountsWidget {
    * метода renderItem()
    * */
   update() {
+
+    if (!User.current()) {
+      return
+    }
+
       Account.list(User.current(), (err, response) => {
         if (response.success) {
           this.clear();
           response.data.forEach(item => this.renderItem(item))
         }
       })
+      
   }
 
   /**
@@ -69,7 +72,7 @@ class AccountsWidget {
    * в боковой колонке
    * */
   clear() {
-    document.querySelectorAll('.account').forEach(item => item.remove())
+    this.element.querySelectorAll('.account').forEach(item => item.parentNode.removeChild(item))
   }
 
   /**

@@ -43,13 +43,16 @@ class AsyncForm {
   getData() {
 
     let obj = {}
-    Array.from(this.element.getElementsByTagName('input')).forEach(item => {
-      obj[item.name] = item.value
-    })
+
+    const formData = new FormData(this.element)
+    const entries = formData.entries()
+
+    for (let item of entries) {
+      const key = item[0], value = item[1];
+      obj[key] = value;
+    }
 
     return obj;
-    // Только после того, как сделал этот метод увидел, что в подсказке написано решение,
-    // если это решение окажется неправильным, поставлю то решение
   }
 
   onSubmit( options ) {
